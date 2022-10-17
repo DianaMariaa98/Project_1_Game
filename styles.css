@@ -1,0 +1,16 @@
+body{
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+canvas {
+    border: 1px solid black;
+}
+
+body button {
+    font-size: 2em;
+    background-color: pink;
+    color: #f4f4f4;
+    
+}
+
