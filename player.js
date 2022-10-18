@@ -1,6 +1,6 @@
 
 class Player {
-    constructor(x, y, w, h, ctx){
+    constructor(x, y, w, h, ctx, img){
         this.x = x;
         this.y = y;
         this.w = w;
@@ -10,13 +10,15 @@ class Player {
         this.xSpeed = 0;
         this.gravity = 0.5;
         this.jumping = false;
+        this.img = img;
         
         
     }
 
 drawPlayer() {
-    this.ctx.fillStyle = 'blue';
-    this.ctx.fillRect(this.x, this.y, this.w, this.h);
+    this.img = new Image();
+    this.img.src = '/docs/assets/images/jon_snow-removebg-preview.png'
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 drawPlayer1() {
     this.ctx.fillStyle = 'red';
@@ -61,17 +63,18 @@ newPos(){
     return this.x + this.w;
 }
 
-crashWith(obstacle) {
-    return!(
-        this.bottom() < obstacle.top() ||
-        this.top() > obstacle.bottom() ||
-        this.right() < obstacle.left() ||
-        this.left() > obstacle.right()
-    );
+checkCollisionEnemy(player) {
+    
+    if (
+      player.x + player.w < this.x ||
+      player.x > this.x + this.w ||
+      player.y + player.h < this.y ||
+      player.y > this.y + this.h
+    ) {
+      return;
+    }
+
 }
-
-
-
 } 
 
 

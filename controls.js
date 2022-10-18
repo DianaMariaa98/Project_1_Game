@@ -48,7 +48,7 @@ class Controls1{
             case 'KeyW':
                 if(this.caracter1.y > 0 && !this.caracter1.jumping) {
                     this.caracter1.jumping = true;
-                    this.caracter1.ySpeed -= 15;
+                    this.caracter1.ySpeed -= 11;
                 }
                 break;
             case 'KeyA':
