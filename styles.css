@@ -5,6 +5,7 @@ body{
 
 canvas {
     border: 1px solid black;
+    
 }
 
 body button {
@@ -13,4 +14,3 @@ body button {
     color: #f4f4f4;
     
 }
-

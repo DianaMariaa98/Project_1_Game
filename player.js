@@ -18,7 +18,6 @@ drawPlayer() {
     this.ctx.fillStyle = 'blue';
     this.ctx.fillRect(this.x, this.y, this.w, this.h);
 }
-
 drawPlayer1() {
     this.ctx.fillStyle = 'red';
     this.ctx.fillRect(this.x, this.y, this.w, this.h);
@@ -48,6 +47,31 @@ newPos(){
         this.jumping = false;
     } 
  }
- 
+
+ top() {
+    return this.y;
+ }
+ bottom() {
+    return this.y + this.h;
+ }
+ left() {
+    return this.x;
+}
+ right() {
+    return this.x + this.w;
+}
+
+crashWith(obstacle) {
+    return!(
+        this.bottom() < obstacle.top() ||
+        this.top() > obstacle.bottom() ||
+        this.right() < obstacle.left() ||
+        this.left() > obstacle.right()
+    );
+}
+
+
 
 } 
+
+
