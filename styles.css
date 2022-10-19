@@ -12,5 +12,9 @@ body button {
     font-size: 2em;
     background-color: pink;
     color: #f4f4f4;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    
     
 }

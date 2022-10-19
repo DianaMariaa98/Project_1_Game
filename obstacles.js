@@ -24,6 +24,18 @@ class Enemy {
         return this.x + this.w;
       }
 
+      /* checkCollisionEnemy(player) {
+    
+        if (
+          player.x + player.w < this.x ||
+          player.x > this.x + this.w ||
+          player.y + player.h < this.y ||
+          player.y > this.y + this.h
+        ) {
+          return;
+        }
+    
+    } */
 
 
 }

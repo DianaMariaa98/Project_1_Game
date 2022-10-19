@@ -22,25 +22,27 @@ class Game{
         this.enemyTwo = null;
         this.enemyThree = null;
         this.allEnemies = [];
-        this.crashed = false;
+        this.door = null;
+        
     }
 
 drawBackground() {
-    this.background.src = '/docs/assets/images/background.png'
+    this.background.src = '/docs/assets/images/wallpapersden.com_game-of-thrones-season-7-the-spoils-of-war-minimal-art_wxl.jpg'
     this.ctx.drawImage(this.background, 0, 0, this.width, this.height);
 }
 
 
 start() {
 
-    this.caracter = new Player(100, 580, 100, 100, this.ctx);
-    this.caracter1 = new Player(30, 580, 60, 80, this.ctx);
-    this.obstacle_one = new PathObstacles(0, 660, 1200, 60, this.ctx);
-    this.obstacle_two = new PathObstacles(1000, 540, 900, 20, this.ctx);
-    this.obstacle_three = new PathObstacles(500, 420, 350, 20, this.ctx)
-    this.obstacle_four = new PathObstacles(50, 350, 300, 20, this.ctx)
-    this.obstacle_five = new PathObstacles(530, 240, 400, 20, this.ctx)
-    this.obstacle_six = new PathObstacles(1000, 120, 400, 20, this.ctx)
+    this.caracter = new Player(100, 580, 60, 100, this.ctx);
+    this.caracter1 = new Player(30, 580, 60, 100, this.ctx);
+    this.obstacle_one = new PathObstacles(0, 640, 1200, 80, this.ctx);
+    this.obstacle_two = new PathObstacles(1000, 540, 900, 30, this.ctx);
+    this.obstacle_three = new PathObstacles(500, 420, 350, 30, this.ctx)
+    this.obstacle_four = new PathObstacles(50, 350, 300, 30, this.ctx)
+    this.obstacle_five = new PathObstacles(530, 240, 400, 30, this.ctx)
+    this.obstacle_six = new PathObstacles(1000, 120, 400, 30, this.ctx)
+    this.door = new Door(1180, 45, 20, 80, this.ctx);
     
     this.allObstacles = [
         this.obstacle_one,
@@ -50,6 +52,9 @@ start() {
         this.obstacle_five,
         this.obstacle_six
     ]
+    this.enemy = new Enemy(300, 620, 90, 30, this.ctx);
+    this.enemyTwo = new Enemy(700, 230, 90, 30, this.ctx);
+    this.enemyThree = new Enemy(100, 340, 90, 30, this.ctx);
     this.allEnemies = [
         this.enemy,
         this.enemyTwo,
@@ -61,15 +66,15 @@ start() {
     this.controls1.keyboardEvents1();
     this.intervalId = setInterval(this.update, 1000 / 60);
 
-    this.enemy = new Enemy(300, 650, 90, 30, this.ctx);
-    this.enemyTwo = new Enemy(700, 230, 90, 30, this.ctx);
-    this.enemyThree = new Enemy(100, 340, 90, 30, this.ctx);
 }
 
 
 update = () => {
     this.frames++;
     this.drawBackground();
+    this.checkGameOver()
+    this.checkGameOver_Two();
+
 
     this.caracter.drawPlayer();
     this.caracter.newPos();
@@ -96,26 +101,44 @@ update = () => {
         obstacle.checkCollision(this.caracter1)
     })
 
+    
+
+
 
     this.enemy.drawEnemy();
     this.enemyTwo.drawEnemy();
     this.enemyThree.drawEnemy();
-    this.checkGameOver();
 
-}
+    this.door.drawDoor();
+    
 
-checkGameOver() {
-    this.crashed = this.allEnemies.some((enemy) => {
-        return this.caracter.checkCollisionEnemy(enemy);
- ;})
-        if(crashed) {
-            this.stop();
-        }
-        
 }
 
 stop() {
     clearInterval(this.intervalId);
+}
+
+checkGameOver() {
+    const crashed = this.allEnemies.some((obstacle) => {
+        return this.caracter.checkCollisionEnemy(obstacle);
+ })
+    const crashed_player_two = this.allEnemies.some((obstacle) => {
+        return this.caracter1.checkCollisionEnemy(obstacle);
+ })
+        if(crashed || crashed_player_two) {
+
+            this.stop();
+        }
+        
+} 
+
+checkGameOver_Two() {
+    if(this.caracter.checkCollisionEnemy(this.door))
+     this.stop();
+
+    if(this.caracter1.checkCollisionEnemy(this.door))
+    this.stop();
+    
 }
 
 

@@ -17,12 +17,13 @@ class Player {
 
 drawPlayer() {
     this.img = new Image();
-    this.img.src = '/docs/assets/images/jon_snow-removebg-preview.png'
+    this.img.src = '/docs/assets/images/jon_snow_pix.png'
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 drawPlayer1() {
-    this.ctx.fillStyle = 'red';
-    this.ctx.fillRect(this.x, this.y, this.w, this.h);
+    this.img = new Image();
+    this.img.src = '/docs/assets/images/dany_pix.png'
+    this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 
 checkBorders(){
@@ -50,13 +51,13 @@ newPos(){
     } 
  }
 
- top() {
+top() {
     return this.y;
  }
- bottom() {
+bottom() {
     return this.y + this.h;
  }
- left() {
+left() {
     return this.x;
 }
  right() {
@@ -64,16 +65,12 @@ newPos(){
 }
 
 checkCollisionEnemy(player) {
-    
-    if (
-      player.x + player.w < this.x ||
-      player.x > this.x + this.w ||
-      player.y + player.h < this.y ||
-      player.y > this.y + this.h
-    ) {
-      return;
-    }
-
+    return!(
+        this.bottom() < player.top() ||
+        this.top() > player.bottom() ||
+        this.right() < player.left() ||
+        this.left() > player.right()
+      );
 }
 } 
 
