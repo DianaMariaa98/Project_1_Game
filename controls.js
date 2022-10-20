@@ -102,6 +102,7 @@
             case 'ArrowUp':
                 let upKey =  this.keys.filter((key) => key.name === "ArrowUp")
                 upKey[0].state = false;
+                this.caracter.ySpeed = 0;
                 break;
             case 'ArrowLeft':
                 let leftKey =  this.keys.filter((key) => key.name === "ArrowLeft")
@@ -115,6 +116,7 @@
             case 'KeyW':
                 let wKey =  this.keys.filter((key) => key.name === "KeyW")
                 wKey[0].state = false;
+                this.caracter1.ySpeed = 0;
                 break;  
             case 'KeyA':
                 let aKey =  this.keys.filter((key) => key.name === "KeyA")
