@@ -21,7 +21,7 @@ canvas {
     font-size: 5em;
     border-color: #f4f4f4;
     background-color: rgba(56, 72, 110);
-    color: #f4f4f4;
+    color: antiquewhite;
     position: absolute;
     top: 50%;
     left: 40%;
@@ -41,7 +41,7 @@ canvas {
     background-color: rgba(56, 72, 110);
     font-size: 4em;
     border-color: #f4f4f4;
-    color: #f4f4f4;
+    color: antiquewhite;
     font-style:oblique;
     
 }
@@ -51,9 +51,10 @@ canvas {
     position: fixed;
     z-index: 2;
     top:20%;
-    padding-left: 39%;
+    padding-left: 35%;
     font-family: fantasy;
-    font-size: 2em;
+    font-size: 3em;
+    color:antiquewhite
 }
 
 #dany {
@@ -61,9 +62,10 @@ canvas {
     position: fixed;
     z-index: 2;
     top:20%;
-    padding-left: 36%;
+    padding-left: 30%;
     font-family: fantasy;
-    font-size: 2em;
+    font-size: 3em;
+    color:antiquewhite
 }
 
 h1{
@@ -73,21 +75,24 @@ h1{
 
 #timer {
     
-    font-size: 30px;
+    font-size: 100px;
     font-family: 'Press Start 2P', cursive;
     position:relative;
     color: white;
-    top: -125px;
+    top: -200px;
+    color:antiquewhite
 
 }
 
 #instructions{
     font-size: 50px;
+    color:antiquewhite
 }
 
 #second_Instructions{
     font-size: 20px;
-    color: #f4f4f4;
+    
+    color:antiquewhite
 }
 
 #movements_JoN{
@@ -95,6 +100,7 @@ h1{
     font-size: 20px;
     margin-left: 50%;
     margin-top: -17%;
+    color:antiquewhite
 }
 #imagemovements_JoN{
     width: 20%;
@@ -106,6 +112,7 @@ h1{
     color: white;
     font-size: 20px;;
     padding-right: 50%;
+    color:antiquewhite
     
 }
  #imagemovements_Dany {
