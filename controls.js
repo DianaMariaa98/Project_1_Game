@@ -7,7 +7,7 @@
                 name: "ArrowUp",
                 state: false,
                 func: () => {
-                    if(this.caracter.y > 0 && !this.caracter.jumping) {
+                    if(this.caracter.y > 0 && !this.caracter.jumping && this.caracter.ySpeed == 0) {
                         this.caracter.jumping = true;
                         this.caracter.ySpeed -= 10;
                     }
@@ -35,7 +35,7 @@
                 name: "KeyW",
                 state: false,
                 func : () => {
-                    if(this.caracter1.y > 0 && !this.caracter1.jumping) {
+                    if(this.caracter1.y > 0 && !this.caracter1.jumping && this.caracter1.ySpeed == 0) {
                         this.caracter1.jumping = true;
                         this.caracter1.ySpeed -= 10;
                     }
