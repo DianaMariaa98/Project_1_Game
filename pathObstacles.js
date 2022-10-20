@@ -9,9 +9,9 @@ class PathObstacles {
 
     drawPath() {
         this.img = new Image();
-        this.img.src = 'docs/assets/images/platforms3-removebg-preview.png.png'
+        this.img.src = 'docs/assets/images/platforms3-removebg-preview.png'
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
-    
+  
     }
 
     top() {
