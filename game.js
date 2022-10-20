@@ -27,6 +27,7 @@ class Game{
         this.gameOver = false;    
         this.danyWins = false;
         this.jonWins = false;
+        this.counter = 4;
        // this.imgGameOver = new Image();
         //this.imgGameOver.src = '/docs/assets/images/red_wall.jpg'
 
@@ -66,10 +67,41 @@ start() {
         this.enemyTwo,
         this.enemyThree
     ]
-    this.controls = new Controls(this.caracter, this.caracter1);
     
-    this.controls.keyboardEvents();
     this.intervalId = setInterval(this.update, 1000 / 60);
+    document.getElementById("timer").innerHTML = ""
+    document.getElementById("timer").style.visibility = "visible"
+
+    this.intervalId2 = setInterval(() => {
+        this.counter--;
+        
+        if(this.counter == 0) {
+          document.getElementById("timer").innerHTML = "LET'S GO!";  
+        } else {
+          document.getElementById("timer").innerHTML = this.counter;
+        }
+        
+        
+      }, 1000);
+         
+
+      setTimeout(() => {
+
+          clearInterval(this.intervalId2);
+          this.countdown();
+          this.controls = new Controls(this.caracter, this.caracter1);
+    
+          this.controls.keyboardEvents();
+          document.getElementById('canvas').style.visibility = 'visible'
+          
+      }, 4900);
+  }
+
+  countdown() {
+      this.intervalId1 = setInterval(() => {
+          this.update();
+          document.getElementById("timer").style.visibility = "hidden"
+      }, 1000 / 60);
 
 }
 
@@ -78,12 +110,6 @@ update = () => {
     this.frames++;
     this.drawBackground();
     
-    this.checkGameOver()
-    this.checkGameOver_Two();
-    this.endGame();
-    this.whoWins();
-
-
     this.caracter.drawPlayer();
     this.caracter.newPos();
     this.caracter.jump();
@@ -109,9 +135,6 @@ update = () => {
         obstacle.checkCollision(this.caracter1)
     })
 
-    
-
-
 
     this.enemy.drawEnemy();
     this.enemyTwo.drawEnemy();
@@ -120,7 +143,8 @@ update = () => {
     this.door.drawDoor();
 
     this.playerMovement();
-    
+    this.checkGameOver()
+    this.checkGameOver_Two();
 
 }
 
@@ -132,10 +156,12 @@ playerMovement(){
     })
 }
 
-stop() {
-    
+stop = () => {
+    this.endGame();
+    this.whoWins();
     clearInterval(this.intervalId);
-    
+    clearInterval(this.intervalId1);
+    clearInterval(this.intervalId2);
 }
 
 checkGameOver() {
@@ -176,15 +202,15 @@ checkGameOver_Two() {
 
 endGame() {
     if (this.gameOver === true) {
-        this.restartButton.style.display = 'block';
+        this.restartButton.style.visibility = 'visible';
 }
     }
 
 whoWins() {
     if(this.jonWins){
-        document.getElementById('jon_snow').style.display = 'block'
+        document.getElementById('jon_snow').style.visibility = 'visible';
     } else if (this.danyWins) {
-        document.getElementById('dany').style.display = 'block'
+        document.getElementById('dany').style.visibility = 'visible';
     }
     
 }

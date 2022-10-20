@@ -5,10 +5,13 @@ body{
 }
 
 canvas {
-    /* background-image: url('/docs/assets/images/Tyrion-Dragon.jpg'); */
-    display:none;
-    position: center;
+    
+    visibility: hidden;
+    position: fixed;
+    top:40px;
+    left:50px;
     padding-left: 8%;
+    
     
     
 }
@@ -27,8 +30,9 @@ canvas {
 }
 
 #id {
-    display: none;
-    position: absolute;
+    visibility: hidden;
+    position: fixed;
+    z-index: 2;
     top: 45%;
     left: 44%; 
     background-color: blue;
@@ -43,8 +47,9 @@ canvas {
 }
 
 #jon_snow {
-    display: none;
-    position: absolute;
+    visibility: hidden;
+    position: fixed;
+    z-index: 2;
     top:20%;
     padding-left: 39%;
     font-family: fantasy;
@@ -52,8 +57,9 @@ canvas {
 }
 
 #dany {
-    display: none;
-    position: absolute;
+    visibility: hidden;
+    position: fixed;
+    z-index: 2;
     top:20%;
     padding-left: 36%;
     font-family: fantasy;
@@ -62,6 +68,53 @@ canvas {
 
 h1{
     color: #f4f4f4;
+    
 }
 
+#timer {
+    
+    font-size: 30px;
+    font-family: 'Press Start 2P', cursive;
+    position:relative;
+    color: white;
+    
+
+}
+
+#instructions{
+    font-size: 50px;
+}
+
+#second_Instructions{
+    font-size: 20px;
+    color: #f4f4f4;
+}
+
+#movements_JoN{
+    color: white;
+    font-size: 20px;
+    margin-left: 50%;
+    margin-top: -17%;
+}
+#imagemovements_JoN{
+    width: 20%;
+    height: 20%;
+    margin-left: 50%;
+    padding-top: 0%;
+}
+#movements_Dany{
+    color: white;
+    font-size: 20px;;
+    padding-right: 50%;
+    
+}
+ #imagemovements_Dany {
+    width: 13%;
+    height: 13%;
+    padding-right: 50%;
+    
+} 
+.whole_game{
+    padding-bottom: 20%;
+}
 

@@ -9,9 +9,10 @@
 </head>
 
 <body>
+  <div class="whole_game">
     <div class="game-intro">
-     
         <button id="start-button">START</button>
+        
     </div>
 
     <div id="id" class="game-ending">
@@ -31,15 +32,23 @@
       <img class = "image" src="docs/assets/images/cooltext421785078464492.png" alt="Title" width="300" height="150">
     </div>
 
-    <!-- <h1>INSTRUCTIONS
-      <p>Try to avoid the fire obstacles and reach to the Iron Throne first!</p>
-    </h1> -->
-
+    <div id = "instructions">Instructions</div>
     
+
+    <div id = "second_Instructions">Try to avoid the fire obstacles<br> and reach the Iron Throne</div>
+
+    <div id = "movements_JoN">FOR THE KING</div>
+      <img id="imagemovements_JoN" src = 'docs/assets/images/arrows-removebg-preview.png'>
+    
+    <div id = "movements_Dany">FOR THE QUEEN</div>
+      <img id ="imagemovements_Dany" src ='docs/assets/images/wasd_image-removebg-preview.png'>
+
+    <h1 id ="timer"></h1> 
+
 
   <div id="game-canvas">
     <canvas id="canvas" width="1200" height="720"></canvas>
-
+  
     <script type="text/javascript" src="pathObstacles.js"></script>
     <script type =text/javascript src="controls.js"></script>
     <script type="text/javascript" src="obstacles.js"></script>
@@ -48,5 +57,6 @@
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </div>
+</div>
 </body>
 </html>
