@@ -3,7 +3,7 @@ window.onload = () => {
         startGame();
         document.getElementById('canvas').style.display = 'block'
         document.getElementById('start-button').style.display = 'none';
-        
+        document.getElementById('titleGame').style.display = 'none';
         
     }
     document.getElementById('id').onclick = () => {
@@ -12,6 +12,7 @@ window.onload = () => {
         document.getElementById('canvas').style.display = 'none';
         document.getElementById('jon_snow').style.display = 'none';
         document.getElementById('dany').style.display = 'none';
+        
 
     }
     

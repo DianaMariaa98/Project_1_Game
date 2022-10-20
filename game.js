@@ -27,6 +27,8 @@ class Game{
         this.gameOver = false;    
         this.danyWins = false;
         this.jonWins = false;
+       // this.imgGameOver = new Image();
+        //this.imgGameOver.src = '/docs/assets/images/red_wall.jpg'
 
     }
 
@@ -46,7 +48,7 @@ start() {
     this.obstacle_four = new PathObstacles(50, 350, 300, 30, this.ctx)
     this.obstacle_five = new PathObstacles(530, 240, 400, 30, this.ctx)
     this.obstacle_six = new PathObstacles(1000, 120, 400, 30, this.ctx)
-    this.door = new Door(1180, 45, 20, 80, this.ctx);
+    this.door = new Door(1130, 50, 70, 70, this.ctx);
     
     this.allObstacles = [
         this.obstacle_one,
@@ -56,9 +58,9 @@ start() {
         this.obstacle_five,
         this.obstacle_six
     ]
-    this.enemy = new Enemy(300, 620, 90, 30, this.ctx);
-    this.enemyTwo = new Enemy(700, 230, 90, 30, this.ctx);
-    this.enemyThree = new Enemy(100, 340, 90, 30, this.ctx);
+    this.enemy = new Enemy(300, 600, 90, 50, this.ctx);
+    this.enemyTwo = new Enemy(700, 200, 90, 50, this.ctx);
+    this.enemyThree = new Enemy(100, 310, 90, 50, this.ctx);
     this.allEnemies = [
         this.enemy,
         this.enemyTwo,
@@ -144,6 +146,7 @@ checkGameOver() {
         return this.caracter1.checkCollisionEnemy(obstacle);
  })
         if(crashed) {
+            //this.ctx.drawImage(this.imgGameOver, 0, 0, this.width, this.height);
             this.danyWins = true;
             this.gameOver = true;
             this.stop();
@@ -189,9 +192,3 @@ whoWins() {
 }
 
 
-/* endGame =()=> {
-    
-    
-    this.restartButton.style.display = 'block';
-}
-} */

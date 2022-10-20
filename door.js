@@ -5,11 +5,13 @@ class Door{
         this.w = w;
         this.h = h;
         this.ctx = ctx;
+        
     }
 
     drawDoor() {
-        this.ctx.fillStyle = "black";
-        this.ctx.fillRect(this.x, this.y, this.w, this.h);
+      this.img = new Image();
+      this.img.src = '/docs/assets/images/iron_throne.png'
+      this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
     top() {

@@ -18,7 +18,7 @@
                 state: false,
                 func : () => {
                     if (this.caracter.x > 0 && this.caracter.xSpeed > -12) {
-                        this.caracter.xSpeed -= 4.5;
+                        this.caracter.xSpeed -= 0.3;
                       }
                 }
             },
@@ -27,7 +27,7 @@
                 state: false,
                 func : () => {
                     if (this.caracter.x < 1120 && this.caracter.xSpeed < 12) {
-                        this.caracter.xSpeed += 4.5;
+                        this.caracter.xSpeed += 0.3;
                       }
                 }
             },
@@ -46,7 +46,7 @@
                 state: false,
                 func : () => {
                     if (this.caracter1.x > 0 && this.caracter1.xSpeed > -12) {
-                        this.caracter1.xSpeed -= 4.5;
+                        this.caracter1.xSpeed -= 0.3;
                       }
                 }
             }, 
@@ -55,7 +55,7 @@
                 state: false, 
                 func : () => {
                     if (this.caracter1.x < 1120 && this.caracter1.xSpeed < 12) {
-                        this.caracter1.xSpeed += 4.5;
+                        this.caracter1.xSpeed += 0.3;
                       }
                 }
             }

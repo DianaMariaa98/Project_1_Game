@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    background-color: rgba(56, 72, 110);
+    background-image: url('/docs/assets/images/blue_backg.jpeg');
     
 }
 
@@ -8,8 +8,8 @@ canvas {
     /* background-image: url('/docs/assets/images/Tyrion-Dragon.jpg'); */
     display:none;
     position: center;
-    padding-left: 12%;
-    padding-top: 3%;
+    padding-left: 8%;
+    
     
 }
 
@@ -29,9 +29,16 @@ canvas {
 #id {
     display: none;
     position: absolute;
-    top: 50%;
-    left: 45%;
-    
+    top: 45%;
+    left: 44%; 
+    background-color: blue;
+}
+#restart{
+    background-color: rgba(56, 72, 110);
+    font-size: 4em;
+    border-color: #f4f4f4;
+    color: #f4f4f4;
+    font-style:oblique;
     
 }
 
@@ -39,14 +46,22 @@ canvas {
     display: none;
     position: absolute;
     top:20%;
-    padding-left: 42%;
+    padding-left: 39%;
+    font-family: fantasy;
+    font-size: 2em;
 }
 
 #dany {
     display: none;
     position: absolute;
-    top:30%;
-    left:40%;
+    top:20%;
+    padding-left: 36%;
+    font-family: fantasy;
+    font-size: 2em;
+}
+
+h1{
+    color: #f4f4f4;
 }
 
 
