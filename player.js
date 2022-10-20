@@ -17,12 +17,12 @@ class Player {
 
 drawPlayer() {
     this.img = new Image();
-    this.img.src = '/docs/assets/images/jon_snow_pix.png'
+    this.img.src = 'docs/assets/images/jon_snow_pix.png'
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 drawPlayer1() {
     this.img = new Image();
-    this.img.src = '/docs/assets/images/dany_pix.png'
+    this.img.src = 'docs/assets/images/dany_pix.png'
     this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
 }
 
