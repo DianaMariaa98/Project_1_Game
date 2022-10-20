@@ -1,20 +1,52 @@
 body{
     text-align: center;
-    background-color: #f4f4f4;
-}
-
-canvas {
-    border: 1px solid black;
+    background-color: rgba(56, 72, 110);
     
 }
 
-body button {
-    font-size: 2em;
-    background-color: pink;
+canvas {
+    /* background-image: url('/docs/assets/images/Tyrion-Dragon.jpg'); */
+    display:none;
+    position: center;
+    padding-left: 12%;
+    padding-top: 3%;
+    
+}
+
+#start-button {
+    
+    font-size: 5em;
+    border-color: #f4f4f4;
+    background-color: rgba(56, 72, 110);
     color: #f4f4f4;
     position: absolute;
     top: 45%;
+    left: 40%;
+    font-style:oblique;
+    
+}
+
+#id {
+    display: none;
+    position: absolute;
+    top: 50%;
     left: 45%;
     
     
 }
+
+#jon_snow {
+    display: none;
+    position: absolute;
+    top:20%;
+    padding-left: 42%;
+}
+
+#dany {
+    display: none;
+    position: absolute;
+    top:30%;
+    left:40%;
+}
+
+

@@ -23,7 +23,11 @@ class Game{
         this.enemyThree = null;
         this.allEnemies = [];
         this.door = null;
-        
+        this.restartButton = document.getElementById('id');
+        this.gameOver = false;    
+        this.danyWins = false;
+        this.jonWins = false;
+
     }
 
 drawBackground() {
@@ -60,10 +64,9 @@ start() {
         this.enemyTwo,
         this.enemyThree
     ]
-    this.controls = new Controls(this.caracter);
-    this.controls1 = new Controls1(this.caracter1);
+    this.controls = new Controls(this.caracter, this.caracter1);
+    
     this.controls.keyboardEvents();
-    this.controls1.keyboardEvents1();
     this.intervalId = setInterval(this.update, 1000 / 60);
 
 }
@@ -72,8 +75,11 @@ start() {
 update = () => {
     this.frames++;
     this.drawBackground();
+    
     this.checkGameOver()
     this.checkGameOver_Two();
+    this.endGame();
+    this.whoWins();
 
 
     this.caracter.drawPlayer();
@@ -110,12 +116,24 @@ update = () => {
     this.enemyThree.drawEnemy();
 
     this.door.drawDoor();
+
+    this.playerMovement();
     
 
 }
 
+playerMovement(){
+    this.controls.keys.forEach((key) => {
+        if(key.state){
+            key.func()
+        }
+    })
+}
+
 stop() {
+    
     clearInterval(this.intervalId);
+    
 }
 
 checkGameOver() {
@@ -125,21 +143,55 @@ checkGameOver() {
     const crashed_player_two = this.allEnemies.some((obstacle) => {
         return this.caracter1.checkCollisionEnemy(obstacle);
  })
-        if(crashed || crashed_player_two) {
+        if(crashed) {
+            this.danyWins = true;
+            this.gameOver = true;
+            this.stop();
+        }
 
+        if(crashed_player_two) {
+            this.jonWins = true;
+            this.gameOver = true;
             this.stop();
         }
         
 } 
 
 checkGameOver_Two() {
-    if(this.caracter.checkCollisionEnemy(this.door))
+    if(this.caracter.checkCollisionEnemy(this.door)){
+        this.jonWins = true;
+        this.gameOver = true;
      this.stop();
-
-    if(this.caracter1.checkCollisionEnemy(this.door))
+    }
+    if(this.caracter1.checkCollisionEnemy(this.door)){
+        this.danyWins = true;
+        this.gameOver = true;
     this.stop();
+    }
+}
+
+
+endGame() {
+    if (this.gameOver === true) {
+        this.restartButton.style.display = 'block';
+}
+    }
+
+whoWins() {
+    if(this.jonWins){
+        document.getElementById('jon_snow').style.display = 'block'
+    } else if (this.danyWins) {
+        document.getElementById('dany').style.display = 'block'
+    }
     
 }
 
-
 }
+
+
+/* endGame =()=> {
+    
+    
+    this.restartButton.style.display = 'block';
+}
+} */

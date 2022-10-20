@@ -8,7 +8,7 @@ class Player {
         this.ctx = ctx;
         this.ySpeed = 0;
         this.xSpeed = 0;
-        this.gravity = 0.5;
+        this.gravity = 0.4;
         this.jumping = false;
         this.img = img;
         
