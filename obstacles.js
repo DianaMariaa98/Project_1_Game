@@ -10,7 +10,7 @@ class Enemy {
 
     drawEnemy() {
         this.img = new Image();
-        this.img.src ='/docs/assets/images/fire_obstacle.png';
+        this.img.src ='docs/assets/images/fire_obstacle.png';
         this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
     top() {

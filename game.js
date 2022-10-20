@@ -33,7 +33,7 @@ class Game{
     }
 
 drawBackground() {
-    this.background.src = '/docs/assets/images/wallpapersden.com_game-of-thrones-season-7-the-spoils-of-war-minimal-art_wxl.jpg'
+    this.background.src = 'docs/assets/images/wallpapersden.com_game-of-thrones-season-7-the-spoils-of-war-minimal-art_wxl.jpg'
     this.ctx.drawImage(this.background, 0, 0, this.width, this.height);
 }
 

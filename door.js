@@ -10,7 +10,7 @@ class Door{
 
     drawDoor() {
       this.img = new Image();
-      this.img.src = '/docs/assets/images/iron_throne.png'
+      this.img.src = 'docs/assets/images/iron_throne.png';
       this.ctx.drawImage(this.img, this.x, this.y, this.w, this.h);
     }
 
