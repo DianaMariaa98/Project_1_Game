@@ -1,9 +1,9 @@
-<p allign="center" dir="auto">
+<p align="center" dir="auto">
 <a rel="noopener noreferrer" href="https://dianamariaa98.github.io/Project_1_Game/" target="_blank">
 <img src="./docs/assets/images/iron_throne.png" width="110" style="max-width: 100%;"> </a> </p>
-<h1 allign="center" dir="auto"><strong>Race of Thrones<br>Race!</strong></h1>
-<h2 allign="center" dir="auto">Two-Player platformer racing game created with JavaScript, HTML, CSS and Canvas</h2>
-<p allign="center" dir="auto">
+<h1 align="center" dir="auto"><strong>Race of Thrones<br>Race!</strong></h1>
+<h2 align="center" dir="auto">Two-Player platformer racing game created with JavaScript, HTML, CSS and Canvas</h2>
+<p align="center" dir="auto">
 </p>
 <hr>
 <br>
@@ -23,7 +23,7 @@
 <br>
 <br>
 <br>
-<h1 allign="center" dir="auto">
+<h1 align="center" dir="auto">
 <a rel="noopener noreferrer" href="https://dianamariaa98.github.io/Project_1_Game/" target="_blank"><strong>PLAY NOW!</strong></a></h1>
 <br>
 <br>
@@ -35,7 +35,8 @@
 <table>
 <thead>
 <tr style="border: 2px solid grey;">
-<th style="border: 2px solid grey;">Key</th>
+<th style="border: 2px solid grey;">Keys</th>
+<th style="border: 2px solid grey;">Keys</th>
 <th style="border: 2px solid grey;">Action</th>
 </tr>
 </thead>
@@ -43,7 +44,7 @@
 <tr style="border: 2px solid grey;">
 <td style="border: 2px solid grey;"><strong><code>A,S,D,W</code></strong></td>
 <td style="border: 2px solid grey;"><strong><code>ArrowUp, ArrowDown, ArrowLeft, ArrowRight</code></strong></td>
-<td style="border: 2px solid grey;">Jump, race and avoid the fire obstacles.</td>
+<td style="border: 2px solid grey;"><strong><code>Jump, race and avoid the fire obstacles.</code></strong></td>
 </tr>
 </tbody>
 </table>
